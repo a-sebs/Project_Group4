@@ -1,0 +1,33 @@
+void realizarRetiro()
+{
+    if (usuarioActual == nullptr)
+    {
+        cout << "Debe iniciar sesión para realizar un retiro." << endl;
+        return;
+    }
+
+    float monto;
+    cout << "Retiro" << endl;
+    cout << "Ingrese el monto a retirar: ";
+    cin >> monto;
+    if (usuarioActual->saldo >= monto)
+    {
+        usuarioActual->saldo -= monto;
+        cout << "Retiro realizado exitosamente." << endl;
+    }
+    else
+    {
+        cout << "Saldo insuficiente para realizar el retiro." << endl;
+    }
+}
+
+/* Procedimiento para consultar saldos */
+void consultarSaldo()
+{
+    if (usuarioActual == nullptr)
+    {
+        cout << "Debe iniciar sesión para consultar el saldo." << endl;
+        return;
+    }
+    cout << "Saldo actual: $" << usuarioActual->saldo << endl;
+}
